@@ -4,12 +4,9 @@
 #define sda A5
 #define scl A4
 
-int adad;
-
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 void setup() {
-  Serial.begin(9600);
   lcd.init();
   lcd.clear();
   lcd.backlight();
@@ -18,11 +15,6 @@ void setup() {
 }
 
 void loop() {
-  if (Serial.available()) {
-    adad=Serial.parseInt();
-  }
-  lcd.setCursor(7,0);
-  lcd.print(adad);
-  delay(500);
-  lcd.clear();
+  lcd.setCursor(2, 0);
+  lcd.print("hello world");
 }
